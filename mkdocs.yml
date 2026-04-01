@@ -1,4 +1,24 @@
 site_name: Planner
+site_description: A customisable weekly planner webapp
+site_url: https://tiogars.github.io/planner/docs/
+repo_url: https://github.com/tiogars/planner
+repo_name: tiogars/planner
+
 docs_dir: docs
+
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: orange
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - content.code.copy
+
 nav:
   - Home: index.md
+  - Specification: spec.md
+  - Architecture: architecture.md
+  - Workflows: workflows.md
