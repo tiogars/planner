@@ -72,9 +72,6 @@ plugins:
   # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search/?h=search#configuration
   - search:
 
-  # https://pypi.org/project/mkdocs-slides/
-  - slides:
-
   # https://pypi.org/project/mkdocs-include-markdown-plugin/
   - include-markdown:
 
