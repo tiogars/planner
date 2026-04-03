@@ -50,22 +50,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Set up Python
-        uses: actions/setup-python@v6
-        with:
-          python-version: '3.12'
-
-      - name: Install MkDocs Material
-        run: pip install mkdocs-material
-
-      - name: Build docs
-        run: mkdocs build --strict --site-dir site/docs
+      - name: Build docs with Docker
+        run: |
+          docker run \
+            -v ${{ github.workspace }}/docs:/server/docs \
+            -v ${{ github.workspace }}/mkdocs.yml:/server/mkdocs.yml \
+            -v ${{ github.workspace }}/site_output:/server/site_output \
+            -w /server/ \
+            ghcr.io/tiogars/mkdocs-docker-image:latest \
+            build
 
       - name: Upload docs artifact
         uses: actions/upload-artifact@v4
         with:
           name: docs-site
-          path: site/
+          path: site_output/
 
   deploy:
     needs: [build-app, build-docs]
@@ -84,7 +83,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: docs-site
-          path: site/
+          path: site/docs/
 
       - name: Setup Pages
         uses: actions/configure-pages@v6
