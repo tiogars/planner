@@ -19,6 +19,8 @@ Open [http://localhost:5173/planner/](http://localhost:5173/planner/) in your br
 
 ## Documentation
 
-- [Specification](spec.md) – full product spec
-- [Architecture](architecture.md) – stack and technical decisions
-- [Workflows](workflows.md) – GitHub Actions CI/CD details
+Detailed documentation is organized into three main sections:
+
+- [**1. Specification**](1-specification/index.md) – Product requirements, pages, and scope
+- [**2. Architecture**](2-architecture/index.md) – Stack, layout, state, routing, and deployment
+- [**3. Workflows**](3-workflows/index.md) – CI/CD pipeline configuration and GitHub Actions
