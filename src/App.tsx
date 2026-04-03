@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import SetupPage from './pages/SetupPage';
 import ActivitiesPage from './pages/ActivitiesPage';
@@ -8,7 +8,7 @@ import { PlannerProvider } from './context/PlannerContext';
 export default function App() {
   return (
     <PlannerProvider>
-      <BrowserRouter basename="/planner">
+      <HashRouter>
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<SetupPage />} />
@@ -17,7 +17,7 @@ export default function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </PlannerProvider>
   );
 }
