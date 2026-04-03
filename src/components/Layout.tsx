@@ -1,11 +1,14 @@
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import IconButton from '@mui/material/IconButton';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Toolbar from '@mui/material/Toolbar';
+import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 import { useLocation, useNavigate, Outlet } from 'react-router-dom';
 
 const NAV_TABS = [
@@ -33,6 +36,18 @@ export default function Layout() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Planner
           </Typography>
+          <Tooltip title="Documentation">
+            <IconButton
+              component="a"
+              href="/docs"
+              target="_blank"
+              rel="noopener noreferrer"
+              color="inherit"
+              aria-label="documentation"
+            >
+              <MenuBookIcon />
+            </IconButton>
+          </Tooltip>
         </Toolbar>
         <Tabs
           value={currentTab === -1 ? 0 : currentTab}
