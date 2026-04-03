@@ -69,29 +69,6 @@ nav:
     - 3.4 Docs Generation: 3-workflows/3.4-docs-generation/index.md
 
 plugins:
-  # https://ultrabug.github.io/mkdocs-static-i18n/
-  - i18n:
-      # https://ultrabug.github.io/mkdocs-static-i18n/setup/choosing-the-structure/
-      docs_structure: suffix
-      # https://ultrabug.github.io/mkdocs-static-i18n/setup/controlling-your-builds/
-      fallback_to_default: true
-      # https://ultrabug.github.io/mkdocs-static-i18n/setup/setting-up-languages/
-      languages:
-        - locale: en
-          default: true
-          name: English
-          build: true
-        - locale: fr
-          name: Français
-          build: true
-          nav_translations:
-            Home: Accueil
-            Features: Fonctionnalités
-            Requirements: Prérequis
-            Diagrams: Diagrammes
-      # https://ultrabug.github.io/mkdocs-static-i18n/setup/setting-up-material/
-      reconfigure_material: true
-
   # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search/?h=search#configuration
   - search:
 
